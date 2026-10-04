@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Nhúng CSS vào trang HTML</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- PHẦN 3: Liên kết với tệp CSS bên ngoài (External-style) -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ============================================================
+         PHẦN 2: ĐỊNH KIỂU SỬ DỤNG INTERNAL-STYLE
+         Sử dụng thẻ <style> đặt trực tiếp bên trong phần <head>
+         ============================================================ -->
+    <style>
+        /* Định dạng màu sắc văn bản cho Phần 2 bằng Internal CSS */
+        .internal-heading {
+            color: #2563eb; /* Màu xanh dương (Royal Blue) cho tiêu đề */
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .internal-paragraph {
+            color: #1e40af; /* Màu xanh dương đậm cho đoạn văn */
+            font-size: 15px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header chính của trang -->
+        <header class="page-header">
+            <h1>[Bài tập] Nhúng CSS vào trang HTML</h1>
+            <p>Khám phá và phân biệt 3 cách định kiểu CSS: Inline-style, Internal-style và External-style</p>
+        </header>
+
+        <!-- ============================================================
+             PHẦN 1: THAY ĐỔI MÀU SẮC SỬ DỤNG INLINE-STYLE
+             Sử dụng thuộc tính style="..." trực tiếp trên từng thẻ HTML
+             ============================================================ -->
+        <section class="demo-card">
+            <span class="card-badge badge-inline">
+                <i class="fa-solid fa-code"></i> Phần 1: Inline-style
+            </span>
+
+            <!-- Tiêu đề sử dụng thuộc tính style trực tiếp (Inline CSS) -->
+            <h2 style="color: #e11d48; font-size: 20px; font-weight: 700; margin-bottom: 8px;">
+                Tiêu đề văn bản: Định dạng màu sắc bằng Inline-style
+            </h2>
+
+            <!-- Đoạn văn sử dụng thuộc tính style trực tiếp (Inline CSS) -->
+            <p style="color: #be123c; font-size: 15px; line-height: 1.6;">
+                Đoạn văn này được định dạng màu đỏ thắm bằng cách nhúng thuộc tính <code>style="color: #be123c;"</code> trực tiếp vào trong thẻ <code>&lt;p&gt;</code>. Phương pháp này có độ ưu tiên cao nhất nhưng khó tái sử dụng khi website lớn.
+            </p>
+
+            <div class="code-snippet">
+                <span class="comment">&lt;!-- Cú pháp Inline Style --&gt;</span><br>
+                &lt;<span class="tag">h2</span> <span class="attr">style</span>=<span class="val">"color: #e11d48;"</span>&gt;Tiêu đề...&lt;/<span class="tag">h2</span>&gt;<br>
+                &lt;<span class="tag">p</span> <span class="attr">style</span>=<span class="val">"color: #be123c;"</span>&gt;Đoạn văn...&lt;/<span class="tag">p</span>&gt;
+            </div>
+        </section>
+
+        <!-- ============================================================
+             PHẦN 2: THAY ĐỔI MÀU SẮC SỬ DỤNG INTERNAL-STYLE
+             Sử dụng class đã được định nghĩa trong thẻ <style> tại <head>
+             ============================================================ -->
+        <section class="demo-card">
+            <span class="card-badge badge-internal">
+                <i class="fa-solid fa-file-code"></i> Phần 2: Internal-style
+            </span>
+
+            <!-- Tiêu đề sử dụng class từ thẻ <style> trong <head> -->
+            <h2 class="internal-heading">
+                Tiêu đề văn bản: Định dạng màu sắc bằng Internal-style
+            </h2>
+
+            <!-- Đoạn văn sử dụng class từ thẻ <style> trong <head> -->
+            <p class="internal-paragraph">
+                Đoạn văn này được định dạng màu xanh dương bằng cách sử dụng thẻ <code>&lt;style&gt;</code> đặt trong phần <code>&lt;head&gt;</code> của trang HTML. Phương pháp này giúp tập trung các quy tắc định kiểu cho một trang đơn lẻ.
+            </p>
+
+            <div class="code-snippet">
+                <span class="comment">&lt;!-- Khai báo trong thẻ &lt;head&gt; --&gt;</span><br>
+                &lt;<span class="tag">style</span>&gt;<br>
+                &nbsp;&nbsp;<span class="attr">.internal-heading</span> { <span class="attr">color</span>: <span class="val">#2563eb</span>; }<br>
+                &nbsp;&nbsp;<span class="attr">.internal-paragraph</span> { <span class="attr">color</span>: <span class="val">#1e40af</span>; }<br>
+                &lt;/<span class="tag">style</span>&gt;
+            </div>
+        </section>
+
+        <!-- ============================================================
+             PHẦN 3: THAY ĐỔI MÀU SẮC SỬ DỤNG EXTERNAL-STYLE
+             Sử dụng class đã được định nghĩa trong tệp riêng style.css
+             ============================================================ -->
+        <section class="demo-card">
+            <span class="card-badge badge-external">
+                <i class="fa-solid fa-link"></i> Phần 3: External-style
+            </span>
+
+            <!-- Tiêu đề sử dụng class từ tệp style.css -->
+            <h2 class="external-heading">
+                Tiêu đề văn bản: Định dạng màu sắc bằng External-style
+            </h2>
+
+            <!-- Đoạn văn sử dụng class từ tệp style.css -->
+            <p class="external-paragraph">
+                Đoạn văn này được định dạng màu xanh ngọc bích thông qua tệp CSS độc lập bên ngoài (<code>style.css</code>) và được liên kết bằng thẻ <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>. Đây là phương pháp tiêu chuẩn tốt nhất trong phát triển web thực tế.
+            </p>
+
+            <div class="code-snippet">
+                <span class="comment">&lt;!-- Trong tệp HTML: &lt;link rel="stylesheet" href="style.css"&gt; --&gt;</span><br>
+                <span class="comment">/* Trong tệp style.css */</span><br>
+                <span class="attr">.external-heading</span> { <span class="attr">color</span>: <span class="val">#059669</span>; }<br>
+                <span class="attr">.external-paragraph</span> { <span class="attr">color</span>: <span class="val">#065f46</span>; }
+            </div>
+        </section>
+
+        <!-- Bảng tổng hợp so sánh 3 cách nhúng CSS -->
+        <section class="comparison-card">
+            <h2>
+                <i class="fa-solid fa-scale-balanced" style="color: var(--primary);"></i>
+                So sánh tổng quan 3 phương pháp nhúng CSS
+            </h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phương pháp</th>
+                            <th>Vị trí viết mã</th>
+                            <th>Độ ưu tiên</th>
+                            <th>Ưu điểm</th>
+                            <th>Trường hợp áp dụng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Inline-style</strong></td>
+                            <td>Thuộc tính <code>style</code> trên thẻ HTML</td>
+                            <td>Cao nhất (1000)</td>
+                            <td>Tác động tức thì, thử nghiệm nhanh</td>
+                            <td>Thử nghiệm nhanh, override tạm thời</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Internal-style</strong></td>
+                            <td>Thẻ <code>&lt;style&gt;</code> trong <code>&lt;head&gt;</code></td>
+                            <td>Trung bình (phụ thuộc thứ tự)</td>
+                            <td>Quản lý tập trung trong 1 trang duy nhất</td>
+                            <td>Trang đơn (Landing page, email template)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>External-style</strong></td>
+                            <td>Tệp riêng biệt (ví dụ: <code>style.css</code>)</td>
+                            <td>Tiêu chuẩn (dễ ghi đè)</td>
+                            <td>Tái sử dụng cho toàn website, tải nhanh (cache)</td>
+                            <td>Dự án thực tế chuyên nghiệp</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <p>Bài thực hành: <strong>Nhúng CSS vào trang HTML</strong> • Hoàn thành đầy đủ 3 phần yêu cầu</p>
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+/* ============================================================
+   [Bài tập] Nhúng CSS vào trang HTML - style.css
+   Mục đích: Luyện tập nhúng CSS bằng External-style
+   ============================================================ */
+
+/* --- Cấu hình chung cho trang web --- */
+:root {
+    --primary: #4f46e5;
+    --bg-page: #f8fafc;
+    --surface: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+    --radius-lg: 16px;
+    --radius-md: 10px;
+    --radius-sm: 6px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 40px 20px;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.07) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.07) 0px, transparent 50%);
+}
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* Header Trang */
+.page-header {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.page-header p {
+    color: var(--text-muted);
+    font-size: 14.5px;
+}
+
+/* Khung card cho từng phần thực hành */
+.demo-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: 26px 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    margin-bottom: 22px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.demo-card:hover {
+    box-shadow: 0 14px 28px -6px rgba(15, 23, 42, 0.12);
+}
+
+.card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+}
+
+.badge-inline {
+    background: #ffe4e6;
+    color: #e11d48;
+}
+
+.badge-internal {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.badge-external {
+    background: #d1fae5;
+    color: #047857;
+}
+
+.code-snippet {
+    background: #1e293b;
+    color: #f8fafc;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    margin-top: 14px;
+    overflow-x: auto;
+}
+
+.code-snippet span.tag { color: #f43f5e; }
+.code-snippet span.attr { color: #38bdf8; }
+.code-snippet span.val { color: #facc15; }
+.code-snippet span.comment { color: #94a3b8; font-style: italic; }
+
+/* ============================================================
+   PHẦN 3: ĐỊNH KIỂU SỬ DỤNG EXTERNAL-STYLE
+   Các quy tắc CSS dưới đây được áp dụng từ file style.css bên ngoài
+   ============================================================ */
+.external-heading {
+    color: #059669; /* Màu xanh ngọc (Emerald Green) cho tiêu đề */
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.external-paragraph {
+    color: #065f46; /* Màu xanh đậm cho văn bản */
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Bảng so sánh 3 cách nhúng CSS */
+.comparison-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: 28px 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+}
+
+.comparison-card h2 {
+    font-size: 18px;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+}
+
+th {
+    background: #f1f5f9;
+    color: #334155;
+    font-weight: 700;
+}
+
+tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+/* Footer */
+.page-footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 20px;
+}
